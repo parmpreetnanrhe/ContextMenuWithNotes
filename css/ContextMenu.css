@@ -1,3 +1,12 @@
+:root {
+    --yellow-color: #ffff71;
+    --red-color: #b81b13;
+    --blue-color: #0E4780;
+    --border-radius: 5px;
+    --box-shadow-color: #00000096;
+    --note-header-border-color: #d6d631;
+}
+
 html,
 body {
     width: 100%;
@@ -6,23 +15,37 @@ body {
     padding: 0;
     margin: 0;
 }
-mark{
-    display: inline;
-}
-.displayNoneMenuItem{
-    display: none;
-}
-#context-menu {
-    position: fixed;
-    z-index: 10000;
+
+
+.customContextMenu {
+    position: absolute;
+    z-index: 9;
     width: 150px;
     background: #1b1a1a;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     transform: scale(0);
     transform-origin: top left;
 }
 
-#context-menu .item {
+.invalidSelectionMessage,
+.pleaseSaveNoteFirst {
+    position: absolute;
+    z-index: 9;
+    width: 250px;
+    background: var(--red-color);
+    border-radius: var(--border-radius);
+    color: #fff;
+    /* transform: scale(0); */
+    padding: 5px;
+    display: none;
+    /* transform-origin: top left; */
+}
+
+.customContextMenu .displayNoneMenuItem {
+    display: none;
+}
+
+.customContextMenu .item {
     padding: 8px 10px;
     font-size: 15px;
     color: #eee;
@@ -30,22 +53,94 @@ mark{
     border-radius: inherit;
 }
 
-#context-menu .item:hover {
+.customContextMenu .item:hover {
     background: #343434;
 }
-  
-#context-menu.visible {
+
+.customContextMenu.visible {
     display: block;
 }
 
-#context-menu.visible {
+.customContextMenu.visible {
     transform: scale(1);
     transition: transform 200ms ease-in-out;
 }
 
-.textDatas {
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+.customMenuEnabled,
+.customStickyNotesAdded {
+    /* margin: 20px 0px; */
+    position: relative;
+}
+
+.customMenuEnabled mark,
+.customStickyNotesAdded mark {
+    display: inline;
+    border-radius: var(--border-radius);
+    /* box-shadow: 1px 1px 20px #0000002e; */
+}
+
+.customStickyNotesHidden {
+    display: none;
+}
+
+.customStickyNote {
+    background: var(--yellow-color);
+    width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 16px var(--box-shadow-color);
+    position: absolute;
+    z-index: 6;
+    display: none;
+}
+
+.customStickyNote .noteHeader {
+    background: var(--yellow-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    height: 30px;
+    max-height: 30px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--note-header-border-color);
+}
+
+.customStickyNote span.noteHeaderText {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.customStickyNote .textarea {
+    background: var(--yellow-color);
+    border: none;
+    outline: none;
+    height: 219px;
+    max-width: 250px;
+    max-height: 219px;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    overflow: auto;
+}
+
+
+.customStickyNote span.noteCrossIcon {
+    background: var(--red-color) !important;
+    min-width: 23px;
+    height: 23px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.customStickyNote span.noteCrossIcon.saveNote {
+    padding: 0px 5px;
 }

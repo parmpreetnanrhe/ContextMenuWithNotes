@@ -9,12 +9,29 @@
     
 </head>
 <body>
-    <div id="context-menu">
-        <div class="item" id="highlightText">Highlight Text</div>
-        <div class="item" id="createNote">Create Note</div>
-        <div class="item displayNoneMenuItem" id="clearHighLight">Clear</div>
+    <div id="customContextMenu" class="customContextMenu">
+        <div class="item" id="highlightSelectedText">Highlight Text</div>
+        <div class="item" id="createCustomNote">Add Note</div>
+        <div class="item" id="viewCustomNote">View/Edit Note</div>
+        <div class="item displayNoneMenuItem" id="clearHighOrNoteLight">Clear</div>
     </div>
-    <div class="textData">
+    <div id="invalidSelectionMessage" class="invalidSelectionMessage">
+        Invalid Selection! Please limit your selection to the student response and avoid any overlaps.
+    </div>
+    <div id="pleaseSaveNoteFirst" class="pleaseSaveNoteFirst">
+        Please save the note.
+    </div>
+    <div class="customStickyNotesHidden">
+        <div class="noteBox">
+            <header class="noteHeader">
+                <span class="noteHeaderText">Note</span><span class="noteCrossIcon saveNote">Save</span>
+            </header>
+            <div class="textarea" contenteditable>
+
+            </div>
+        </div>
+    </div>
+    <div class="customMenuEnabled" id="customContextMenuText1" customcontextmenutextno="1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales augue neque, eu egestas urna dignissim iaculis. Vestibulum interdum pretium enim, vel eleifend tellus semper bibendum. Vivamus finibus molestie sapien et tristique. Duis quis sapien ut nisl elementum convallis. Pellentesque euismod tincidunt vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis pellentesque eleifend erat, a posuere ex tincidunt non. Maecenas euismod scelerisque diam, quis bibendum lacus ultrices accumsan. Aenean blandit tincidunt neque, sit amet scelerisque erat ultrices vel. Integer pharetra purus quis varius commodo. Curabitur eu cursus mi. Donec sem justo, eleifend luctus gravida at, posuere a lacus. Integer faucibus nisl ex, ac dignissim neque ornare ut. Sed massa quam, imperdiet at justo ut, bibendum porta lorem. Integer erat erat, blandit non metus vitae, cursus bibendum ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
     </div>
     <script src="js/ContextMenuNew.js"></script>
