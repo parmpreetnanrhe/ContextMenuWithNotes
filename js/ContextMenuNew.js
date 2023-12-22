@@ -216,7 +216,7 @@ const performActionAccordingToClick = (e, params) => {
         noteToOpen.style.left = `${screenPositionFromXAxis}px`;
         hideCustomContextMenu(e);
     }
-    if (actionToPerform == "clearHighlight") {
+    if (actionToPerform == "clearHighOrNoteLight") {
         bodyElementSelected.appendChild(contextMenu);
         const highlightSelectedTextId = contextMenu.getAttribute("highlightselectedtexttid");
         const highlightSelectedTextNo = contextMenu.getAttribute("highlightselectedtexttno");
@@ -427,7 +427,7 @@ highlightSelectedText.addEventListener("click", (e) => {
 clearHighOrNoteLight.addEventListener("click", (e) => {
     e.preventDefault();
     // eventPerformed = window.event;
-    const actionToPerform = "clearHighlight";
+    const actionToPerform = "clearHighOrNoteLight";
     performActionAccordingToClick(e, { actionToPerform });
 })
 createCustomNote.addEventListener("click", (e) => {
