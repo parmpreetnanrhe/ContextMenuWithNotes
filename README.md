@@ -3,22 +3,27 @@ Custom Context Menu With Note Add Functionality
 Using this code you can add custom context menu to your site and allow user to add notes to the selected text. 
 
 Place the Context menu html in your html code.
+``` html
 <div id="customContextMenu" class="customContextMenu">
         <div class="item" id="highlightSelectedText">Highlight Text</div>
         <div class="item" id="createCustomNote">Add Note</div>
         <div class="item" id="viewCustomNote">View/Edit Note</div>
         <div class="item displayNoneMenuItem" id="clearHighOrNoteLight">Clear</div>
 </div>
+```
 
 Place the below mentioned validation classes in to your html code.
+``` html
 <div id="invalidSelectionMessage" class="invalidSelectionMessage">
     Invalid Selection! Please limit your selection to the student response and avoid any overlaps.
 </div>
 <div id="pleaseSaveNoteFirst" class="pleaseSaveNoteFirst">
     Please save the note.
 </div>
+```
 
 This the Html to of sticy note box. Add this as well into you html code.
+``` html
 <div class="customStickyNotesHidden">
     <div class="noteBox">
         <header class="noteHeader">
@@ -28,11 +33,15 @@ This the Html to of sticy note box. Add this as well into you html code.
         </div>
     </div>
 </div>
+````
 
 This is how you have to apply class and id on paragraph or text on which you want this functionality to work. Context meny will only apply to the text with in the boxt with class name **customMenuEnabled**. Weather you have a one or more paragraphs along with class name you add id to each paragraph like **customContextMenuText1...so on**. On rest of the parts native browser conetxt menu will appear.
+
+``` html
 <div class="customMenuEnabled" id="customContextMenuText1" customcontextmenutextno="1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales augue neque, eu egestas urna dignissim iaculis. Vestibulum interdum pretium enim, vel eleifend tellus semper bibendum. Vivamus finibus molestie sapien et tristique. Duis quis sapien ut nisl elementum convallis. Pellentesque euismod tincidunt vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis pellentesque eleifend erat, a posuere ex tincidunt non. Maecenas euismod scelerisque diam, quis bibendum lacus ultrices accumsan. Aenean blandit tincidunt neque, sit amet scelerisque erat ultrices vel. Integer pharetra purus quis varius commodo. Curabitur eu cursus mi. Donec sem justo, eleifend luctus gravida at, posuere a lacus. Integer faucibus nisl ex, ac dignissim neque ornare ut. Sed massa quam, imperdiet at justo ut, bibendum porta lorem. Integer erat erat, blandit non metus vitae, cursus bibendum ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 </div>
+```
 
 Along with this html include the js and css files attached with the code into you code. Now you are ready to use the functionality. 
 
